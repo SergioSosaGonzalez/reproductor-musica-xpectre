@@ -91,7 +91,7 @@ body {
 
 .container .progressBar .duracion {
     position: relative;
-    top: -25px;
+    top: -35px;
     display: flex;
     justify-content: space-between;
 }
@@ -117,4 +117,43 @@ body {
     backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.25);
+    animation: animacion 5s linear infinite;
+    animation-delay: calc(1s*var(--i));
+}
+
+.cuadrado:nth-child(1) {
+    width: 90px;
+    height: 150px;
+    top: 200px;
+    left: 500px;
+    z-index: 1;
+}
+
+.cuadrado:nth-child(2) {
+    width: 150px;
+    height: 80px;
+    bottom: 270px;
+    right: 450px;
+    z-index: 1;
+}
+
+.cuadrado:nth-child(3) {
+    width: 100px;
+    height: 100px;
+    bottom: 50px;
+    right: 50%;
+    z-index: -1;
+}
+
+@keyframes animacion {
+    0% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translate(10px);
+    }
+
+    100% {
+        transform: translateY(-10px);
+    }
 }
